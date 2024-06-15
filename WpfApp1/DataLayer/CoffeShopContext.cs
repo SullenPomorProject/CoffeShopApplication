@@ -57,7 +57,7 @@ public partial class CoffeShopContext : DbContext
             entity
                 .HasNoKey()
                 .ToView("OrderFullInfoView");
-
+            entity.Ignore(e => e.ChangeStatusCommand);
             entity.Property(e => e.Address).HasMaxLength(100);
             entity.Property(e => e.Composition).HasMaxLength(4000);
             entity.Property(e => e.Cost).HasColumnType("decimal(7, 2)");

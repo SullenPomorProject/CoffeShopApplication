@@ -41,12 +41,12 @@ namespace CoffeShopApplication
 
             if (shop != null && shop.Password == enteredPassword)
             {
-                System.Windows.Forms.MessageBox.Show($"{CoffeShopApplication.Properties.Settings.Default.ShopAddress}\n{CoffeShopApplication.Properties.Settings.Default.ShopPassword}");
+               // System.Windows.Forms.MessageBox.Show($"{CoffeShopApplication.Properties.Settings.Default.ShopAddress}\n{CoffeShopApplication.Properties.Settings.Default.ShopPassword}");
                 Properties.Settings.Default.ShopAddress = enteredAddress;
                 Properties.Settings.Default.ShopPassword = enteredPassword;
                 Properties.Settings.Default.Save();
                 Properties.Settings.Default.Upgrade();
-                System.Windows.Forms.MessageBox.Show($"{CoffeShopApplication.Properties.Settings.Default.ShopAddress}\n{CoffeShopApplication.Properties.Settings.Default.ShopPassword}");
+               // System.Windows.Forms.MessageBox.Show($"{CoffeShopApplication.Properties.Settings.Default.ShopAddress}\n{CoffeShopApplication.Properties.Settings.Default.ShopPassword}");
                 _mainWindow.mainFrame.Navigate(workPage);
             }
             else

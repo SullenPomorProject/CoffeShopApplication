@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Input;
 
 namespace CoffeShopApplication.Models;
 
@@ -20,4 +21,5 @@ public partial class OrderFullInfoView
     public decimal? Cost { get; set; }
 
     public string Status { get; set; } = null!;
+    public ICommand ChangeStatusCommand { get; set; }
 }
