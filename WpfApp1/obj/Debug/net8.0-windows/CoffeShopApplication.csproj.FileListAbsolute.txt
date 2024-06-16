@@ -118,15 +118,11 @@ C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\bin\Debug\net8.0-windows\ru
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\CoffeShopApplication.csproj.AssemblyReference.cache
-C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\AuthorizationPage.g.cs
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\MainWindow.g.cs
-C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\WorkPage.g.cs
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\CoffeShopApplication_MarkupCompile.cache
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\CoffeShopApplication_MarkupCompile.lref
-C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\AuthorizationPage.baml
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\MainWindow.baml
-C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\WorkPage.baml
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\CoffeShopApplication.g.resources
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\CoffeShopApplication.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\CoffeShopApplication.AssemblyInfoInputs.cache
@@ -139,3 +135,7 @@ C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\re
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\CoffeShopApplication.pdb
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\CoffeShopApplication.genruntimeconfig.cache
 C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\ref\CoffeShopApplication.dll
+C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\Pages\AuthorizationPage.g.cs
+C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\Pages\WorkPage.g.cs
+C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\Pages\AuthorizationPage.baml
+C:\Users\1\Desktop\ПП\CoffeShopApplication\WpfApp1\obj\Debug\net8.0-windows\Pages\WorkPage.baml

@@ -26,6 +26,8 @@ public partial class CoffeShopContext : DbContext
 
     public virtual DbSet<Shop> Shops { get; set; }
 
+    public virtual DbSet<ShopInfoView> ShopInfoViews { get; set; }
+
     public virtual DbSet<ShopProduct> ShopProducts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -114,9 +116,19 @@ public partial class CoffeShopContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<ShopInfoView>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("ShopInfoView");
+            entity.Property(e => e.CategoryName).HasMaxLength(50);
+            entity.Property(e => e.ProductName).HasMaxLength(50);
+            entity.Property(e => e.ShopAddress).HasMaxLength(100);
+        });
+
         modelBuilder.Entity<ShopProduct>(entity =>
         {
-            entity.HasNoKey();
+            entity.HasKey(p => new { p.IdProduct, p.IdShop}); ;
 
             entity.Property(e => e.Count).HasDefaultValue((byte)100);
 
@@ -133,5 +145,4 @@ public partial class CoffeShopContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
 }

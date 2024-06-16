@@ -7,21 +7,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AuthorizationPage.xaml.cs">
+    <Compile Update="Pages\AuthorizationPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="WorkPage.xaml.cs">
+    <Compile Update="Pages\WorkPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AuthorizationPage.xaml">
+    <Page Update="Pages\AuthorizationPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="WorkPage.xaml">
+    <Page Update="Pages\WorkPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
