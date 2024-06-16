@@ -13,7 +13,7 @@
             <TabItem Header="Профиль">
                 <StackPanel HorizontalAlignment="Center">
                     <Label>Shop Address</Label>
-                    <Label x:Name="ShopAddressLabel"></Label>
+                    <Label x:Name="shopAddressLabel"></Label>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Заказы">

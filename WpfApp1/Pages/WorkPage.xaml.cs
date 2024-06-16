@@ -14,6 +14,7 @@ namespace WpfApp1
         public WorkPage()
         {
             InitializeComponent();
+            shopAddressLabel.Content = CoffeShopApplication.Properties.Settings.Default.ShopAddress;
             UpdateAll();
             ShowShopProducts();
         }
@@ -165,6 +166,7 @@ namespace WpfApp1
             ShowOrdersFullInfo(newOrdersDataGrid, "Принят");
             ShowOrdersFullInfo(processOrdersDataGrid, "Готовится", "Ожидает выдачи");
             ShowOrdersFullInfo(complitedOrdersDataGrid, "Получен", "Отменен");
+            ShowShopProducts();
         }
 
         private void SaveShopChangesButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -191,9 +193,13 @@ namespace WpfApp1
                     {
                         using (var dbContext = new CoffeShopContext())
                         {
-                            var shopProduct = selectedItem.ToShopProduct();
-                            dbContext.ShopProducts.Update(shopProduct);
-                            dbContext.SaveChanges();
+                            var shopProduct = dbContext.ShopProducts.Find(selectedItem.IdShop, selectedItem.IdProduct);
+                            if (shopProduct != null)
+                            {
+                                shopProduct.Count = selectedItem.Count;
+                                dbContext.ShopProducts.Update(shopProduct);
+                                dbContext.SaveChanges();
+                            }
                         }
                     }
                 }
