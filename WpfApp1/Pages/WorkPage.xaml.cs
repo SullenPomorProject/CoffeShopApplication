@@ -122,14 +122,19 @@ namespace WpfApp1
                     {
                         using (var dbContext = new CoffeShopContext())
                         {
-                            var shopProduct = dbContext.ShopProducts.Find(selectedItem.IdShop, selectedItem.IdProduct);
-                            if (shopProduct != null)
+                            if (int.TryParse((e.EditingElement as TextBox).Text, out int newCount))
                             {
-                                /*
-                                shopProduct.Count = selectedItem.Count;
-                                dbContext.ShopProducts.Update(shopProduct);
-                                dbContext.SaveChanges();*/
-                                System.Windows.Forms.MessageBox.Show(shopProduct.ToString());
+                                // Значение успешно преобразовано в тип int и сохранено в переменную newValue
+                                System.Windows.Forms.MessageBox.Show($"Новое значение: {newCount}");
+                                string updateQuery = $"UPDATE ShopProducts SET Count = {newCount} WHERE IdShop = {selectedItem.IdShop} AND IdProduct = {selectedItem.IdProduct}";
+                                System.Windows.Forms.MessageBox.Show(updateQuery);
+                                dbContext.Database.ExecuteSqlRaw(updateQuery);
+                                dbContext.SaveChanges();
+                            }
+                            else
+                            {
+                                // При ошибке преобразования будет выполнен этот блок кода
+                                System.Windows.Forms.MessageBox.Show("Неверный формат числа");
                             }
                         }
                     }
