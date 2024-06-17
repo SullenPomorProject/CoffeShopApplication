@@ -1,7 +1,6 @@
 ﻿using CoffeShopApplication.DataLayer;
 using CoffeShopApplication.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace WpfApp1
@@ -77,12 +76,12 @@ namespace WpfApp1
         public void ShowShopProducts()
         {
             using CoffeShopContext context = new CoffeShopContext();
-            var shopProducts = context.ShopInfoViews.FromSqlRaw($"SELECT * from ShopInfoView where ShopAddress = '{CoffeShopApplication.Properties.Settings.Default.ShopAddress}' order by CategoryName;");
+            var shopProducts = context.ShopInfoView2s.FromSqlRaw($"SELECT * from ShopInfoView2 where ShopAddress = '{CoffeShopApplication.Properties.Settings.Default.ShopAddress}' order by CategoryName;");
 
-            List<ShopInfoView> ShopInfoViews = new List<ShopInfoView>();
+            List<ShopInfoView2> ShopInfoViews2 = new List<ShopInfoView2>();
             foreach (var product in shopProducts)
             {
-                ShopInfoView ShopInfoView = new ShopInfoView
+                ShopInfoView2 ShopInfoView = new ShopInfoView2
                 {
                     IdShop = product.IdShop,
                     IdProduct = product.IdProduct,
@@ -91,69 +90,9 @@ namespace WpfApp1
                     ProductName = product.ProductName,
                     Count = product.Count
                 };
-                ShopInfoViews.Add(ShopInfoView);
+                ShopInfoViews2.Add(ShopInfoView);
             }
-            shopProductsDataGrid.ItemsSource = ShopInfoViews;
-        }
-        private void SaveShopProductsChanges()
-        {
-            using CoffeShopContext context = new CoffeShopContext();
-            var result = MessageBox.Show(
-                $"Вы действительно хотите сохранить {shopProductsDataGrid.SelectedItems.Count} записей?",
-                "Сохранение",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question
-                );
-            if (result != MessageBoxResult.Yes)
-            {
-                var x = shopProductsDataGrid.SelectedItem;
-                var y = shopProductsDataGrid.SelectedValue;
-                var z = shopProductsDataGrid.SelectedCells;
-                System.Windows.Forms.MessageBox.Show(x.ToString());
-                System.Windows.Forms.MessageBox.Show(y.ToString());
-                System.Windows.Forms.MessageBox.Show(z.ToString());
-                return;
-            }
-            try
-            {
-                var editedProducts = shopProductsDataGrid.SelectedItems.OfType<ShopInfoView>();
-                System.Windows.Forms.MessageBox.Show(editedProducts.ToString());
-                foreach (var product in editedProducts)
-                {
-                    context.Entry(product).State = EntityState.Modified;
-                }
-                context.SaveChanges();
-                MessageBox.Show("Изменения успешно сохранены", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Не удалось сохранить изменения. Причина: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-        private void DelShopProducts()
-        {
-            using CoffeShopContext context = new CoffeShopContext();
-            var result = MessageBox.Show(
-                $"Вы действительно хотите удалить {shopProductsDataGrid.SelectedItems.Count} записей?",
-                "Удаление",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question
-                );
-            if (result != MessageBoxResult.Yes)
-            {
-                return;
-            }
-            try
-            {
-                var products = shopProductsDataGrid.SelectedItems.OfType<ShopInfoView>();
-                context.ShopInfoViews.RemoveRange(products);
-                context.SaveChanges();
-                MessageBox.Show("Данные успешно удалены", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Не удалось удалить записи. Причина: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            shopProductsDataGrid.ItemsSource = ShopInfoViews2;
         }
 
         private void UpdateButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -169,16 +108,6 @@ namespace WpfApp1
             ShowShopProducts();
         }
 
-        private void SaveShopChangesButton_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SaveShopProductsChanges();
-            ShowShopProducts();
-        }
-        private void DelShopProductsButton_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            DelShopProducts();
-            ShowShopProducts();
-        }
 
         private void ShopProductsDataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
@@ -188,7 +117,7 @@ namespace WpfApp1
 
                 if (dataGrid != null)
                 {
-                    var selectedItem = dataGrid.SelectedItem as ShopInfoView;
+                    var selectedItem = dataGrid.SelectedItem as ShopInfoView2;
                     if (selectedItem != null)
                     {
                         using (var dbContext = new CoffeShopContext())
@@ -196,9 +125,11 @@ namespace WpfApp1
                             var shopProduct = dbContext.ShopProducts.Find(selectedItem.IdShop, selectedItem.IdProduct);
                             if (shopProduct != null)
                             {
+                                /*
                                 shopProduct.Count = selectedItem.Count;
                                 dbContext.ShopProducts.Update(shopProduct);
-                                dbContext.SaveChanges();
+                                dbContext.SaveChanges();*/
+                                System.Windows.Forms.MessageBox.Show(shopProduct.ToString());
                             }
                         }
                     }
