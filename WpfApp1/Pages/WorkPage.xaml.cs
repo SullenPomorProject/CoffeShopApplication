@@ -60,7 +60,6 @@ namespace WpfApp1
                                     orderToUpdate.Status = "Получен";
                                     break;
                                 default:
-                                    // Здесь можно добавить дополнительные статусы или оставить пустым, если заказ остается в статусе "Получен"
                                     break;
                             }
                             updateContext.SaveChanges();
@@ -124,12 +123,11 @@ namespace WpfApp1
                         {
                             if (int.TryParse((e.EditingElement as TextBox).Text, out int newCount))
                             {
-                                // Значение успешно преобразовано в тип int и сохранено в переменную newValue
-                                System.Windows.Forms.MessageBox.Show($"Новое значение: {newCount}");
+                                // Значение успешно преобразовано в тип int и сохранено в переменную newCount
                                 string updateQuery = $"UPDATE ShopProducts SET Count = {newCount} WHERE IdShop = {selectedItem.IdShop} AND IdProduct = {selectedItem.IdProduct}";
-                                System.Windows.Forms.MessageBox.Show(updateQuery);
                                 dbContext.Database.ExecuteSqlRaw(updateQuery);
                                 dbContext.SaveChanges();
+                                System.Windows.Forms.MessageBox.Show("Данные изменены");
                             }
                             else
                             {
