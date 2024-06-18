@@ -7,6 +7,8 @@ public partial class ShopInfoView
 {
     public int IdShop { get; set; }
 
+    public int IdProduct { get; set; }
+
     public string ShopAddress { get; set; } = null!;
 
     public string CategoryName { get; set; } = null!;

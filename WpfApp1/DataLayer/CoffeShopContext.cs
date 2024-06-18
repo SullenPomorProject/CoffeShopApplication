@@ -28,8 +28,6 @@ public partial class CoffeShopContext : DbContext
 
     public virtual DbSet<ShopInfoView> ShopInfoViews { get; set; }
 
-    public virtual DbSet<ShopInfoView2> ShopInfoView2s { get; set; }
-
     public virtual DbSet<ShopProduct> ShopProducts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -123,17 +121,6 @@ public partial class CoffeShopContext : DbContext
             entity
                 .HasNoKey()
                 .ToView("ShopInfoView");
-
-            entity.Property(e => e.CategoryName).HasMaxLength(50);
-            entity.Property(e => e.ProductName).HasMaxLength(50);
-            entity.Property(e => e.ShopAddress).HasMaxLength(100);
-        });
-
-        modelBuilder.Entity<ShopInfoView2>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToView("ShopInfoView2");
 
             entity.Property(e => e.CategoryName).HasMaxLength(50);
             entity.Property(e => e.ProductName).HasMaxLength(50);

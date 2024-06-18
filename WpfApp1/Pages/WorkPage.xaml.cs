@@ -76,12 +76,12 @@ namespace WpfApp1
         public void ShowShopProducts()
         {
             using CoffeShopContext context = new CoffeShopContext();
-            var shopProducts = context.ShopInfoView2s.FromSqlRaw($"SELECT * from ShopInfoView2 where ShopAddress = '{CoffeShopApplication.Properties.Settings.Default.ShopAddress}' order by CategoryName;");
+            var shopProducts = context.ShopInfoViews.FromSqlRaw($"SELECT * from ShopInfoView where ShopAddress = '{CoffeShopApplication.Properties.Settings.Default.ShopAddress}' order by CategoryName;");
 
-            List<ShopInfoView2> ShopInfoViews2 = new List<ShopInfoView2>();
+            List<ShopInfoView> ShopInfoViews2 = new List<ShopInfoView>();
             foreach (var product in shopProducts)
             {
-                ShopInfoView2 ShopInfoView = new ShopInfoView2
+                ShopInfoView ShopInfoView = new ShopInfoView
                 {
                     IdShop = product.IdShop,
                     IdProduct = product.IdProduct,
@@ -117,7 +117,7 @@ namespace WpfApp1
 
                 if (dataGrid != null)
                 {
-                    var selectedItem = dataGrid.SelectedItem as ShopInfoView2;
+                    var selectedItem = dataGrid.SelectedItem as ShopInfoView;
                     if (selectedItem != null)
                     {
                         using (var dbContext = new CoffeShopContext())
