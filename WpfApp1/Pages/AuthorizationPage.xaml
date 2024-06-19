@@ -9,10 +9,10 @@
       Title="AuthorizationPage">
 
     <StackPanel Width="300" Background="White" VerticalAlignment="Center">
-        <Label HorizontalAlignment="Center">Address</Label>
+        <Label HorizontalAlignment="Center">Адрес</Label>
         <TextBox x:Name="addressTextBox"></TextBox>
-        <Label HorizontalAlignment="Center">Password</Label>
+        <Label HorizontalAlignment="Center">Пароль</Label>
         <PasswordBox x:Name="passwordPasswordBox" Margin="0 0 0 20"/>
-        <Button Click="AuthorizationButton_Click">Authorizate</Button>
+        <Button Click="AuthorizationButton_Click">Авторизоваться</Button>
     </StackPanel>
 </Page>

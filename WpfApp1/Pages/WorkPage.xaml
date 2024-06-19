@@ -12,14 +12,14 @@
         <TabControl Height="Auto">
             <TabItem Header="Профиль">
                 <StackPanel HorizontalAlignment="Center">
-                    <Label>Shop Address</Label>
+                    <Label>Адрес кофейни</Label>
                     <Label x:Name="shopAddressLabel"></Label>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Заказы">
                 <StackPanel>
-                    <Button Click="UpdateButton_Click">Update</Button>
-                    <Label>New Orders</Label>
+                    <Button Click="UpdateButton_Click">Обновить</Button>
+                    <Label>Новые заказы</Label>
                     <DataGrid x:Name="newOrdersDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id Order" Binding="{Binding IdOrder}" />
@@ -33,13 +33,13 @@
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="Change Status" Command="{Binding ChangeStatusCommand}" />
+                                        <Button Content="Изменить статус" Command="{Binding ChangeStatusCommand}" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Label>In Proccess</Label>
+                    <Label>В процессе</Label>
                     <DataGrid x:Name="processOrdersDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id Order" Binding="{Binding IdOrder}" />
@@ -53,13 +53,13 @@
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Change Status" Command="{Binding ChangeStatusCommand}" />
+                                    <Button Content="Изменить статус" Command="{Binding ChangeStatusCommand}" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                     </DataGrid.Columns>
                     </DataGrid>
-                    <Label>Complited</Label>
+                    <Label>Выполненные</Label>
                     <DataGrid x:Name="complitedOrdersDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id Order" Binding="{Binding IdOrder}" />
@@ -70,14 +70,7 @@
                         <DataGridTextColumn Header="Options" Binding="{Binding Options}" />
                         <DataGridTextColumn Header="Cost" Binding="{Binding Cost}" />
                         <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
-                        <DataGridTemplateColumn>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button Content="Change Status" Command="{Binding ChangeStatusCommand}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
+                        </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>
             </TabItem>
