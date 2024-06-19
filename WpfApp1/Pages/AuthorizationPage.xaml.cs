@@ -35,7 +35,7 @@ namespace CoffeShopApplication
             using CoffeShopContext context = new CoffeShopContext();
 
             string enteredAddress = addressTextBox.Text;
-            string enteredPassword = passwordTextBox.Text;
+            string enteredPassword = passwordPasswordBox.Password;
 
             var shop = context.Shops.FirstOrDefault(s => s.Address == enteredAddress);
 

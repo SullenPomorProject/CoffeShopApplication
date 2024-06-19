@@ -12,8 +12,7 @@
         <Label HorizontalAlignment="Center">Address</Label>
         <TextBox x:Name="addressTextBox"></TextBox>
         <Label HorizontalAlignment="Center">Password</Label>
-        <TextBox x:Name="passwordTextBox"></TextBox>
-        <Label x:Name="testLabel"></Label>
+        <PasswordBox x:Name="passwordPasswordBox" Margin="0 0 0 20"/>
         <Button Click="AuthorizationButton_Click">Authorizate</Button>
     </StackPanel>
 </Page>

@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yElqu3MFg/E=",
+  "dgSpecHash": "mRZNjqz6TRs=",
   "success": true,
   "projectFilePath": "C:\\Users\\1\\Desktop\\ПП\\Finall\\WPF Финал\\CoffeShopApplication\\WpfApp1\\CoffeShopApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\1\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
-    "C:\\Users\\1\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
